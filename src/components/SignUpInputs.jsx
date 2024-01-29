@@ -66,7 +66,9 @@ export default function SignUpInputs({ setIsNewUser }) {
           <label>Confirm Password</label>
           <input
             type="password"
-            className={confirmPassNotValid ? "invalid" : undefined}
+            className={
+              confirmPassNotValid || passwordNotValid ? "invalid" : undefined
+            }
             onChange={(event) =>
               handleInputChange("confirmPassword", event.target.value)
             }
