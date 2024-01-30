@@ -1,4 +1,13 @@
 import { useState } from "react";
+import { styled } from "styled-components";
+
+const ControlContainer = styled.div`
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
 
 export default function AuthInputs({ setIsNewUser }) {
   const [fields, setFields] = useState({
@@ -26,7 +35,7 @@ export default function AuthInputs({ setIsNewUser }) {
 
   return (
     <div id="auth-inputs">
-      <div className="controls">
+      <ControlContainer className="controls">
         <p>
           <label className={`label ${emailNotValid ? "invalid" : undefined}`}>
             Email
@@ -51,7 +60,7 @@ export default function AuthInputs({ setIsNewUser }) {
             }
           />
         </p>
-      </div>
+      </ControlContainer>
       <div className="actions">
         <button
           type="button"
