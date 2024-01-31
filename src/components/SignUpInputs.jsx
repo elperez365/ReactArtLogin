@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Input } from "./AuthInputs";
 
 export default function SignUpInputs({ setIsNewUser }) {
   const [fields, setFields] = useState({
@@ -36,7 +37,7 @@ export default function SignUpInputs({ setIsNewUser }) {
       <div className="controls">
         <p>
           <label>Email</label>
-          <input
+          <Input
             type="email"
             className={emailNotValid ? "invalid" : undefined}
             onChange={(event) => handleInputChange("email", event.target.value)}
@@ -44,7 +45,7 @@ export default function SignUpInputs({ setIsNewUser }) {
         </p>
         <p>
           <label>Username</label>
-          <input
+          <Input
             type="text"
             className={userNameNotValid ? "invalid" : undefined}
             onChange={(event) =>
@@ -54,7 +55,7 @@ export default function SignUpInputs({ setIsNewUser }) {
         </p>
         <p>
           <label>Password</label>
-          <input
+          <Input
             type="password"
             className={passwordNotValid ? "invalid" : undefined}
             onChange={(event) =>
@@ -64,7 +65,7 @@ export default function SignUpInputs({ setIsNewUser }) {
         </p>
         <p>
           <label>Confirm Password</label>
-          <input
+          <Input
             type="password"
             className={
               confirmPassNotValid || passwordNotValid ? "invalid" : undefined
